@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+{% if description %}	
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-3">
+		<h2>{{club}}</h2>
+		<h1>Description</h1>
+		<hr>
+		<p>{{description}}</p>	
+						
+{% endif %}					
+	</div>
+</div>
+{% endblock %}

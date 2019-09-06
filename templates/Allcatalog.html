@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row banner main">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+		</div>
+	</div>
+{% if countries !=[] %}	
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-3">
+		<h2>Countries</h2>
+		{% for i in countries %}	
+			<div class="country-item">
+			<h3><a href = "{{url_for('showCountryClubs',country_name = i.name)}}">{{i.name}}</h3></a>				
+			</div>
+		{% endfor %}				
+{% endif %}					
+	</div>
+{% if clubs !=[] %}		
+<div class="col-md-3">
+	<h2>Latest Clubs</h2>
+	{% for i in clubs %}
+		<div class="club-item">
+			<div class="country-item">
+			<h3><a href = "{{url_for('showdescription',club_name = i.title,country_name = i.country_name)}}">{{i.title}}</a></h3>				
+			</div>
+		{% endfor %}
+{% endif %}		
+</div>
+{% endblock %}
